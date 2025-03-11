@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floristería Online</title>
+    <title>Floristería</title>
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -12,11 +12,10 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Floristería Online</a>
+            <a class="navbar-brand" href="Index.html">Floristería</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,7 +23,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <!-- Dropdown para Servicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="servicios.html" id="navbarDropdown">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CatalogoProductos.html">Catálogo de Productos</a></li>
+                            <li><a class="dropdown-item" href="eventos.html">Decoración de Eventos</a></li>
+                            <li><a class="dropdown-item" href="jardines.html">Diseño de Jardines</a></li>
+                            <li><a class="dropdown-item" href="corporativos.html">Arreglos Corporativos</a></li>
+                            <li><a class="dropdown-item" href="interiores.html">Decoración de Interiores</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda</a></li>
                     <li class="nav-item"><a class="nav-link" href="facturacion.html">Facturación</a></li>
@@ -115,25 +126,25 @@
                 <h4>Servicios</h4>
                 <div class="list-group">
                     <!-- Decoración de Eventos -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="Eventos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Decoración de Eventos</h5>
                         <p class="mb-1">Bodas, Cumpleaños, Graduaciones, Baby Showers</p>
                     </a>
 
                     <!-- Diseño de Jardines -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="jardines.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Diseño de Jardines</h5>
                         <p class="mb-1">Asesoría y Planificación, Instalación y Mantenimiento</p>
                     </a>
 
                     <!-- Arreglos Corporativos -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="Corporativos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Arreglos Corporativos</h5>
                         <p class="mb-1">Oficinas y Espacios Comerciales, Contratos Empresariales</p>
                     </a>
 
                     <!-- Decoración de Interiores -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="Interiores.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Decoración de Interiores</h5>
                         <p class="mb-1">Centros de Mesa, Arreglos para el Hogar</p>
                     </a>
@@ -145,25 +156,25 @@
                 <h4>Catálogo de Productos</h4>
                 <div class="list-group">
                     <!-- Ramos de Flores -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Ramos de Flores</h5>
                         <p class="mb-1">Explora nuestros hermosos ramos de flores para cualquier ocasión.</p>
                     </a>
 
                     <!-- Lirios y Flores Blancas -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Lirios y Flores Blancas</h5>
                         <p class="mb-1">Descubre nuestros lirios frescos y flores blancas perfectas para eventos.</p>
                     </a>
 
                     <!-- Plantas y Orquídeas -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Plantas y Orquídeas</h5>
                         <p class="mb-1">Selecciona plantas ornamentales y orquídeas para tu hogar o jardín.</p>
                     </a>
 
                     <!-- Arreglos para el Hogar -->
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Arreglos para el Hogar</h5>
                         <p class="mb-1">Explora arreglos decorativos para tu hogar, desde centros de mesa hasta detalles
                             únicos.</p>
@@ -176,7 +187,8 @@
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="#" class="text-white">Política de Privacidad</a> | <a href="#" class="text-white">Términos y
+            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> | <a href="Terminos.html"
+                    class="text-white">Términos y
                     Condiciones</a></p>
         </div>
     </footer>

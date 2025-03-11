@@ -7,6 +7,14 @@ html, body {
     flex-direction: column;
 }
 
+#pagina-ayuda, #pagina-contraseña, #pagina-cuenta, #pagina-facturacion, #pagina-registro {
+    padding-top: 70px; /* Ajusta según la altura de la navbar */
+}
+
+main {
+    flex: 1;
+}
+
 /* Hacer que el contenido crezca y empuje el footer hacia abajo */
 .container {
     flex: 1;
@@ -141,6 +149,7 @@ h2{
 /* Footer */
 footer {
     background-color: #24282c;
+    margin-top: auto; /* Empuja el footer hacia el final */
 }
 
 footer a {
@@ -224,4 +233,8 @@ footer a:hover {
 .btn-servicios:hover {
     background-color: #0c0d0e; /* Color más oscuro al pasar el mouse */
     cursor: pointer; /* Cambia el cursor cuando está sobre el botón */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
 }

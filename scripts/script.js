@@ -12,3 +12,10 @@ document.querySelectorAll(".service-link").forEach(item => {
         modal.show();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let myCarousel = new bootstrap.Carousel(document.querySelector("#carouselExampleFade"), {
+        interval: 3000, // Cambia cada 3 segundos
+        ride: "carousel"
+    });
+});
