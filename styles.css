@@ -49,8 +49,46 @@ h2{
 
 .carousel-item img {
     width: 100vw; /* Fuerza a que la imagen ocupe todo el ancho */
-    max-height: 500px; /* Mantiene la altura fija */
+    max-height: 700px; /* Mantiene la altura fija */
     object-fit: cover; /* Evita deformaciones */
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); 
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2; 
+}
+
+.carousel-caption h3 {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1rem; 
+}
+
+.carousel-caption .btn-primary {
+    background-color: #000; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-caption .btn-primary:hover {
+    background-color: #333;
 }
 
 /* Cards - Productos */
@@ -237,4 +275,51 @@ footer a:hover {
 
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+
+/* Estilo para las secciones */
+.section-header {
+    background-size: cover; 
+    background-position: center; 
+    height: 300px; 
+    position: relative; 
+    padding-bottom: 10px;
+}
+
+.section-header .overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.section-header p {
+    font-size: 1rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    max-width: 800px; 
+    margin: 0 auto; 
+    position: relative; 
+    z-index: 2; 
+}
+
+.section-header h1 {
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    position: relative; 
+    z-index: 2; 
+}
+
+.section-header .btn-light {
+    position: relative; 
+    z-index: 2; 
+}
+
+.section-header .btn-light:hover {
+    background-color: transparent; 
+    color: white; 
+    border: 1px solid white; 
 }
