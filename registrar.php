@@ -1,16 +1,29 @@
 <?php
 include 'conexion.php';
 
-$nombre = $_POST['name'];
-$email = $_POST['email'];
-$telefono = $_POST['telefono'];
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+session_start();
 
-$sql = "INSERT INTO usuarios (nombre, email, telefono, password) VALUES (?, ?, ?, ?)";
+if (isset($_POST['name'], $_POST['email'], $_POST['telefono'], $_POST['password'])) {
+    $nombre = $_POST['name'];
+    $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$stmt = $conexion->prepare($sql);
-$stmt->bind_param('ssss', $nombre, $email, $telefono, $password);
-$stmt->execute();
+    $sql = "INSERT INTO usuarios (nombre, email, telefono, password) VALUES (?, ?, ?, ?)";
+    $stmt = $conexion->prepare($sql);
+    
+    $stmt->bind_param('ssss', $nombre, $email, $telefono, $password);
 
-echo "Nuevo registro creado.";
+    if ($stmt->execute()) {
+        $_SESSION['email'] = $email;
+        
+        // Redirigir a cuenta.html
+        header("Location: cuenta.html");
+        exit();
+    } else {
+        echo "Error al registrar el usuario.";
+    }
+} else {
+    echo "Faltan datos en el formulario.";
+}
 ?>
