@@ -19,6 +19,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <!-- Dropdown para Servicios -->
                     <li class="nav-item dropdown">
@@ -64,7 +65,7 @@
                             <h5 class="card-title">Centro de Mesa Rústico</h5>
                             <p class="card-text">Arreglo con flores silvestres y base de madera.</p>
                             <p class="fw-bold">Precio: ₡25,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Centro de Mesa Rústico', 25000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                             <h5 class="card-title">Centro de Mesa Moderno</h5>
                             <p class="card-text">Diseño minimalista con flores blancas y follaje verde.</p>
                             <p class="fw-bold">Precio: ₡30,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Centro de Mesa Moderno', 30000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                             <h5 class="card-title">Centro de Mesa con Velas</h5>
                             <p class="card-text">Decoración elegante con velas aromáticas y flores frescas.</p>
                             <p class="fw-bold">Precio: ₡27,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Centro de Mesa con Velas', 27000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,7 @@
                             <h5 class="card-title">Arreglo Romántico</h5>
                             <p class="card-text">Rosas rojas y blancas en un elegante florero.</p>
                             <p class="fw-bold">Precio: ₡40,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Arreglo Romántico', 40000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -115,7 +116,7 @@
                             <h5 class="card-title">Arreglo Exótico</h5>
                             <p class="card-text">Combinación de flores tropicales y follaje exuberante.</p>
                             <p class="fw-bold">Precio: ₡45,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Arreglo Exótico', 45000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -126,7 +127,7 @@
                             <h5 class="card-title">Arreglo Colgante</h5>
                             <p class="card-text">Flores en macetas colgantes para espacios acogedores.</p>
                             <p class="fw-bold">Precio: ₡35,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Arreglo Colgante', 35000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +145,7 @@
                             <h5 class="card-title">Suculentas en Maceta</h5>
                             <p class="card-text">Conjunto de suculentas en elegante maceta de cerámica.</p>
                             <p class="fw-bold">Precio: ₡15,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Suculentas en Maceta', 15000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -155,7 +156,7 @@
                             <h5 class="card-title">Bambú de la Suerte</h5>
                             <p class="card-text">Símbolo de prosperidad y armonía para el hogar.</p>
                             <p class="fw-bold">Precio: ₡18,000</p>
-                            <button class="btn btn-success">Agregar al carrito</button>
+                            <button class="btn btn-success" onclick="agregarAlCarrito('Bambú de la Suerte', 18000)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -173,5 +174,26 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Verifica si el carrito ya existe en localStorage, si no, lo crea
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+        function agregarAlCarrito(nombre, precio) {
+            // Buscar si ya existe el producto
+            const productoExistente = carrito.find(p => p.nombre === nombre);
+            
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+    
+            // Guarda el carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${nombre} agregado al carrito.`);
+        }
+    </script>
+
 </body>
 </html>
