@@ -1,10 +1,9 @@
 <?php
 include 'conexion.php';
-
 session_start();
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
 
 $sql = "SELECT id, nombre, password FROM usuarios WHERE email = ?";
 $stmt = $conexion->prepare($sql);
@@ -16,11 +15,11 @@ if ($row = $result->fetch_assoc()) {
     if (password_verify($password, $row['password'])) {
         $_SESSION['id'] = $row['id'];
         $_SESSION['nombre'] = $row['nombre'];
-        echo "Bienvenido, " . $row['nombre'];
+        echo "ok";
     } else {
-        echo "Contraseña incorrecta." . $row['password'];
+        echo "error_contraseña";
     }
 } else {
-    echo "No se encontró el usuario.";
+    echo "error_usuario";
 }
 ?>

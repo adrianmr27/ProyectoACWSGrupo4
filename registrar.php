@@ -17,8 +17,9 @@ if (isset($_POST['name'], $_POST['email'], $_POST['telefono'], $_POST['password'
     if ($stmt->execute()) {
         $_SESSION['email'] = $email;
         
-        // Redirigir a cuenta.html
-        header("Location: cuenta.html");
+        // Redirigir a cuenta.html enviando email por qs
+        header("Location: cuenta.html?email=" . urlencode($email));
+
         exit();
     } else {
         echo "Error al registrar el usuario.";
