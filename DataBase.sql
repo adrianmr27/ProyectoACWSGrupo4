@@ -9,8 +9,3 @@ CREATE TABLE usuarios (
 
 --AGREGAR TIPO DE USUARIO A TABLA USUARIOS
 ALTER TABLE USUARIOS ADD tipo_usuario VARCHAR(20) DEFAULT 'cliente';
-
--- MODIFICAR USUARIO CON ACCESO ADMIN
-UPDATE usuarios
-SET tipo_usuario = 'admin'
-WHERE email = 'fflores@flowerlab.com';
