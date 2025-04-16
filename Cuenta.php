@@ -74,7 +74,14 @@ $telefonoUsuario = $datosUsuario['telefono'] ?? null;
         <?php if ($nombreUsuario): ?>
             <div class="text-center mb-4">
                 <h3>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></h3>
-                <a href="logout.php" class="btn btn-danger mt-3">Cerrar sesión</a>
+                <div class="d-flex flex-column align-items-center">
+                <a href="logout.php" class="btn btn-danger mb-2">Cerrar sesión</a>
+
+                <?php if ($_SESSION['tipo_usuario'] === 'admin'): ?>
+                    <a href="admin.php" class="btn btn-outline-dark">Volver al panel administrador</a>
+                <?php endif; ?>
+            </div>
+
             </div>
 
             <?php if (isset($_GET['actualizado'])): ?>
