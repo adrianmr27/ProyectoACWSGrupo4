@@ -1,47 +1,9 @@
+<?php include_once "cliente_menu.php" ?>
 <?php // registro.php ?>
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Floristería</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body id="pagina-registro">
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/favicon.png" alt="Logo" width="40" height="40" class="me-2">
-                <span>The Flower Lab</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="servicios.html" id="navbarDropdown">Servicios</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="CatalogoProductos.html">Catálogo</a></li>
-                            <li><a class="dropdown-item" href="eventos.html">Eventos</a></li>
-                            <li><a class="dropdown-item" href="jardines.html">Jardines</a></li>
-                            <li><a class="dropdown-item" href="corporativos.html">Corporativos</a></li>
-                            <li><a class="dropdown-item" href="interiores.html">Interiores</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="facturacion.html">Facturación</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="cuenta.php">Cuenta</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <!-- CONTENIDO -->
     <div class="container mt-5 position-relative pt-5">
         <a href="cuenta.php" class="btn btn-outline-dark position-absolute top-0 start-0 mt-3 ms-3">&larr; Volver</a>

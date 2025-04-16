@@ -1,3 +1,4 @@
+<?php include_once "cliente_menu.php" ?>
 <?php
 session_start();
 include 'conexion.php';
@@ -19,50 +20,11 @@ $nombreUsuario = $datosUsuario['nombre'] ?? null;
 $emailUsuario = $datosUsuario['email'] ?? null;
 $telefonoUsuario = $datosUsuario['telefono'] ?? null;
 ?>
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuenta - Floristería</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body id="pagina-cuenta">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/favicon.png" alt="Logo de The Flower Lab" width="40" height="40" class="me-2">
-            <span class="align-middle">The Flower Lab</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="servicios.html" id="navbarDropdown">Servicios</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="CatalogoProductos.html">Catálogo de Productos</a></li>
-                        <li><a class="dropdown-item" href="eventos.html">Decoración de Eventos</a></li>
-                        <li><a class="dropdown-item" href="jardines.html">Diseño de Jardines</a></li>
-                        <li><a class="dropdown-item" href="corporativos.html">Arreglos Corporativos</a></li>
-                        <li><a class="dropdown-item" href="interiores.html">Decoración de Interiores</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda</a></li>
-                <li class="nav-item"><a class="nav-link" href="facturacion.html">Facturación</a></li>
-                <li class="nav-item"><a class="nav-link active" href="cuenta.php">Cuenta</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <main class="container">
     <header class="text-center py-5">
         <h1>Mi Cuenta</h1>
@@ -85,7 +47,7 @@ $telefonoUsuario = $datosUsuario['telefono'] ?? null;
             </div>
 
             <?php if (isset($_GET['actualizado'])): ?>
-                <div class="alert alert-success text-center">✅ Datos actualizados correctamente.</div>
+                <div class="alert alert-success text-center">Datos actualizados correctamente.</div>
             <?php endif; ?>
 
             <hr class="my-4">
@@ -122,7 +84,7 @@ $telefonoUsuario = $datosUsuario['telefono'] ?? null;
                 </div>
                 <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
             </form>
-            <p class="text-center mt-3"><a href="password.html">¿Olvidaste tu contraseña?</a></p>
+            <p class="text-center mt-3"><a href="password.php">¿Olvidaste tu contraseña?</a></p>
             <p class="text-center">¿No tienes cuenta? <a href="Registro.php">Regístrate aquí</a></p>
         <?php endif; ?>
     </div>

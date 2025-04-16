@@ -255,7 +255,6 @@ footer a:hover {
     text-align: justify; /* Alineación justificada */
 }
 
-
 .btn-servicios {
     background-color: #161618; /* Color oscuro similar a btn-dark */
     color: #fff; /* Texto blanco */
@@ -272,6 +271,7 @@ footer a:hover {
     background-color: #0c0d0e; /* Color más oscuro al pasar el mouse */
     cursor: pointer; /* Cambia el cursor cuando está sobre el botón */
 }
+
 
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;

@@ -1,3 +1,4 @@
+<?php include_once "admin_menu.php" ?>
 <?php
 session_start();
 
@@ -10,46 +11,77 @@ if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') 
 $nombre = $_SESSION['nombre'];
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
     <title>Panel de Administración</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .admin-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+        }
+        .admin-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+        }
+        .admin-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            border-radius: 12px;
+        }
+        .admin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .admin-card h5 {
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        .admin-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .btn-admin {
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body class="container my-5">
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="text-center">Bienvenido, <?php echo htmlspecialchars($nombre); ?></h1>
-        <div>
-            <a href="cuenta.php" class="btn btn-outline-secondary me-2">Ver vista de cliente</a>
-            <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
-        </div>
-    </div>
+    <main>
+        <header class="mb-5 text-center">
+            <h1 class="fw-bold">Bienvenido(a), <?php echo htmlspecialchars($nombre); ?></h1>
+            <h2 class="text-muted">Panel de Administración</h2>
+        </header>
 
-    <h2 class="text-center mb-4 text-black">Panel de Administración</h2>
-
-    <div class="row">
-        <!-- Usuarios -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Usuarios</h5>
-                    <p class="card-text">Modifica o elimina cuentas de usuarios registradas en el sistema.</p>
-                    <a href="admin_usuarios.php" class="btn btn-outline-dark w-100">Administrar Usuarios</a>
+        <section class="row justify-content-center g-4">
+            <!-- Usuarios -->
+            <div class="col-md-5 col-lg-4">
+                <div class="card admin-card h-100 text-center p-4 bg-white shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Gestión de Usuarios</h5>
+                        <p class="card-text">Edita, bloquea o elimina cuentas de usuarios registrados.</p>
+                        <a href="admin_usuarios.php" class="btn btn-dark w-100 btn-admin">Ir a Usuarios</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Productos -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Productos</h5>
-                    <p class="card-text">Agrega, edita o elimina productos del catálogo.</p>
-                    <a href="admin_productos.php" class="btn btn-outline-dark w-100">Administrar Productos</a>
+            <!-- Productos -->
+            <div class="col-md-5 col-lg-4">
+                <div class="card admin-card h-100 text-center p-4 bg-white shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Gestión de Productos</h5>
+                        <p class="card-text">Administra el catálogo de productos fácilmente.</p>
+                        <a href="admin_productos.php" class="btn btn-dark w-100 btn-admin">Ir a Productos</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
+
 </body>
 </html>
