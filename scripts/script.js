@@ -19,4 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
         ride: "carousel"
     });
 });
+function agregarAlCarrito(nombre, precio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Verificar si el producto ya está en el carrito
+    const index = carrito.findIndex(producto => producto.nombre === nombre);
+
+    if (index !== -1) {
+        // Si ya existe, aumentar la cantidad
+        carrito[index].cantidad += 1;
+    } else {
+        // Si no existe, agregarlo con cantidad 1
+        carrito.push({ nombre, precio, cantidad: 1 });
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(nombre + ' fue agregado al carrito.');
+}
+
 
