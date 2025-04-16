@@ -18,7 +18,7 @@ if (isset($_POST['name'], $_POST['email'], $_POST['telefono'], $_POST['password'
         $_SESSION['email'] = $email;
         
         // Redirigir a cuenta.html enviando email por qs
-        header("Location: cuenta.html?email=" . urlencode($email));
+        header("Location: cuenta.php?email=" . urlencode($email));
 
         exit();
     } else {
