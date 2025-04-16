@@ -20,15 +20,15 @@ if ($row = $result->fetch_assoc()) {
         if ($row['tipo_usuario'] === 'admin') {
             header("Location: admin.php?login=success");
         } else {
-            header("Location: cuenta.php");
+            header("Location: index.html");
         }
         exit();
     } else {
-        header("Location: cuenta.php?login=error");
+        header("Location: cuenta.php?error=credenciales");
         exit();
     }
 } else {
-    header("Location: cuenta.php?login=error");
+    header("Location: cuenta.php?error=credenciales");
     exit();
 }
 ?>
