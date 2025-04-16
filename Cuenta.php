@@ -123,7 +123,7 @@ $telefonoUsuario = $datosUsuario['telefono'] ?? null;
                 <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
             </form>
             <p class="text-center mt-3"><a href="password.html">¿Olvidaste tu contraseña?</a></p>
-            <p class="text-center">¿No tienes cuenta? <a href="Registro.html">Regístrate aquí</a></p>
+            <p class="text-center">¿No tienes cuenta? <a href="Registro.php">Regístrate aquí</a></p>
         <?php endif; ?>
     </div>
 </main>

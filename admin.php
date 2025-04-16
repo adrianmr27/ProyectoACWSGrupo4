@@ -22,7 +22,7 @@ $nombre = $_SESSION['nombre'];
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="text-center">Bienvenido, <?php echo htmlspecialchars($nombre); ?></h1>
         <div>
-            <a href="cuenta.php" class="btn btn-outline-secondary me-2">Vista de cliente</a>
+            <a href="cuenta.php" class="btn btn-outline-secondary me-2">Ver vista de cliente</a>
             <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
         </div>
     </div>
