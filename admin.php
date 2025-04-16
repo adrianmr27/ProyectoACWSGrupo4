@@ -23,7 +23,7 @@ $nombre = $_SESSION['nombre'];
         <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
     </div>
 
-    <h1 class="text-center mb-4">Bienvenido, <?php echo htmlspecialchars($nombre); ?> 👨‍💼</h1>
+    <h1 class="text-center mb-4">Bienvenido, <?php echo htmlspecialchars($nombre); ?></h1>
 
     <div class="row">
         <div class="col-md-4">
@@ -39,14 +39,6 @@ $nombre = $_SESSION['nombre'];
                 <div class="card-body">
                     <h5 class="card-title">Productos</h5>
                     <a href="admin_productos.php" class="btn btn-outline-dark w-100">Administrar Productos</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Servicios</h5>
-                    <a href="admin_servicios.php" class="btn btn-outline-dark w-100">Administrar Servicios</a>
                 </div>
             </div>
         </div>
