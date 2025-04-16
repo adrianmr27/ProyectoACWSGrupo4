@@ -5,7 +5,7 @@ session_start();
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$sql = "SELECT id, nombre, password FROM usuarios WHERE email = ?";
+$sql = "SELECT id, nombre, password, tipo_usuario FROM usuarios WHERE email = ?";
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -15,11 +15,20 @@ if ($row = $result->fetch_assoc()) {
     if (password_verify($password, $row['password'])) {
         $_SESSION['id'] = $row['id'];
         $_SESSION['nombre'] = $row['nombre'];
-        echo "ok";
+        $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+
+        if ($row['tipo_usuario'] === 'admin') {
+            header("Location: admin.php?login=success");
+        } else {
+            header("Location: cuenta.php");
+        }
+        exit();
     } else {
-        echo "error_contraseña";
+        header("Location: cuenta.php?login=error");
+        exit();
     }
 } else {
-    echo "error_usuario";
+    header("Location: cuenta.php?login=error");
+    exit();
 }
 ?>

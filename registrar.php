@@ -9,7 +9,7 @@ if (isset($_POST['name'], $_POST['email'], $_POST['telefono'], $_POST['password'
     $telefono = $_POST['telefono'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nombre, email, telefono, password) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO usuarios (nombre, email, telefono, password, tipo_usuario) VALUES (?, ?, ?, ?, 'cliente')";
     $stmt = $conexion->prepare($sql);
     
     $stmt->bind_param('ssss', $nombre, $email, $telefono, $password);

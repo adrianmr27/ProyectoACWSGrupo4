@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body id="pagina-cuenta">
+    <?php
+        session_start();
+        $nombreUsuario = $_SESSION['nombre'] ?? null;
+    ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand" href="Index.html">
@@ -53,17 +57,25 @@
         <div class="">
             <div class="col-md-6 mx-auto">
 
-                <form id="form-sesion" action="login.php" method="POST">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                <?php if ($nombreUsuario): ?>
+                    <div class="text-center">
+                        <h3>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></h3>
+                        <a href="logout.php" class="btn btn-danger mt-3">Cerrar sesión</a>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-                    </div>
-                    <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
-                </form>
+                <?php else: ?>
+                    <!-- Formulario de login si no ha iniciado sesión -->
+                    <form id="form-sesion" action="login.php" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
+                    </form>
+                <?php endif; ?>
                 <div id="message" class="alert" role="alert" style="display:none;"></div>
                 <p class="text-center mt-3"><a href="password.html">¿Olvidaste tu contraseña?</a></p>
                 <p class="text-center">¿No tienes cuenta? <a href="Registro.html">Regístrate aquí</a></p>
@@ -86,6 +98,6 @@
                 document.getElementById("email").value = emailParam;
             }
         });
-        </script>        
+    </script>        
 </body>
 </html>
