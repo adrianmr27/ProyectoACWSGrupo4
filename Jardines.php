@@ -9,7 +9,7 @@
 
         <div class="section-header d-flex align-items-center justify-content-center" style="background-image: url('img/flor3.png'); padding-top: 56px;">
             <div class="overlay"></div>
-            <a href="servicios.html" class="btn btn-light position-absolute top-0 start-0 m-3">&larr; Volver</a>
+            <a href="servicios.php" class="btn btn-light position-absolute top-0 start-0 m-5">&larr; Volver</a>
             <div class="text-center position-relative z-index-2">
                 <h1 class="text-white display-4">Diseño de Jardines</h1>
                 <p class="text-white lead">Ofrecemos asesoría, planificación, instalación y mantenimiento de jardines.</p>
