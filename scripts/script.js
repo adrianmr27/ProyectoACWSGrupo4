@@ -37,4 +37,33 @@ function agregarAlCarrito(nombre, precio) {
     alert(nombre + ' fue agregado al carrito.');
 }
 
+function finalizarCompra() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const email = prompt("Ingresa tu correo para recibir el comprobante:");
+
+    if (!email || carrito.length === 0) {
+        alert("Carrito vacío o correo inválido.");
+        return;
+    }
+
+    fetch('procesar_compra.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ carrito, email })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(`Compra realizada. Tu número de orden es: ${data.numero_orden}`);
+            localStorage.removeItem('carrito');
+            location.reload();
+        } else {
+            alert("Hubo un problema al procesar tu compra.");
+        }
+    });
+}
+
+
 

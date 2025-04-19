@@ -13,7 +13,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Bienvenido a The Flower Lab</h3>
                     <p>Descubre nuestra colección de flores frescas y únicas.</p>
-                    <a href="CatalogoProductos.html" class="btn btn-primary">Ver Catálogo</a>
+                    <a href="CatalogoProductos.php" class="btn btn-primary">Ver Catálogo</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -21,7 +21,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Decoración para Eventos</h3>
                     <p>Transformamos tus eventos con diseños florales exclusivos.</p>
-                    <a href="eventos.html" class="btn btn-primary">Más Información</a>
+                    <a href="eventos.php" class="btn btn-primary">Más Información</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -29,7 +29,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Diseño de Jardines</h3>
                     <p>Creamos jardines que inspiran y relajan.</p>
-                    <a href="jardines.html" class="btn btn-primary">Conoce Más</a>
+                    <a href="jardines.php" class="btn btn-primary">Conoce Más</a>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
                         <h5 class="card-title">Ramo de Rosas</h5>
                         <p class="card-text">Ramo de 12 rosas rojas frescas, ideales para cualquier ocasión especial.
                         </p>
-                        <a href="CatalogoProductos.html" class="btn-ver-mas">Ver Más</a>
+                        <a href="CatalogoProductos.php" class="btn-ver-mas">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Ramo de Lirios</h5>
                         <p class="card-text">Lirios blancos, elegantes y frescos para cualquier evento o regalo.</p>
-                        <a href="CatalogoProductos.html" class="btn-ver-mas">Ver Más</a>
+                        <a href="CatalogoProductos.php" class="btn-ver-mas">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Planta de Orquídeas</h5>
                         <p class="card-text">Una hermosa planta de orquídeas en maceta, para decoración interior.</p>
-                        <a href="CatalogoProductos.html" class="btn-ver-mas">Ver Más</a>
+                        <a href="CatalogoProductos.php" class="btn-ver-mas">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Ramo de Girasoles</h5>
                         <p class="card-text">Un ramo alegre de girasoles frescos, para iluminar tu día.</p>
-                        <a href="CatalogoProductos.html" class="btn-ver-mas">Ver Más</a>
+                        <a href="CatalogoProductos.php" class="btn-ver-mas">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -101,25 +101,25 @@
                 <h4>Servicios</h4>
                 <div class="list-group">
                     <!-- Decoración de Eventos -->
-                    <a href="Eventos.html" class="list-group-item list-group-item-action">
+                    <a href="Eventos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Decoración de Eventos</h5>
                         <p class="mb-1">Bodas, Cumpleaños, Graduaciones, Baby Showers</p>
                     </a>
 
                     <!-- Diseño de Jardines -->
-                    <a href="jardines.html" class="list-group-item list-group-item-action">
+                    <a href="jardines.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Diseño de Jardines</h5>
                         <p class="mb-1">Asesoría y Planificación, Instalación y Mantenimiento</p>
                     </a>
 
                     <!-- Arreglos Corporativos -->
-                    <a href="Corporativos.html" class="list-group-item list-group-item-action">
+                    <a href="Corporativos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Arreglos Corporativos</h5>
                         <p class="mb-1">Oficinas y Espacios Comerciales, Contratos Empresariales</p>
                     </a>
 
                     <!-- Decoración de Interiores -->
-                    <a href="Interiores.html" class="list-group-item list-group-item-action">
+                    <a href="Interiores.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Decoración de Interiores</h5>
                         <p class="mb-1">Centros de Mesa, Arreglos para el Hogar</p>
                     </a>
@@ -131,25 +131,25 @@
                 <h4>Catálogo de Productos</h4>
                 <div class="list-group">
                     <!-- Ramos de Flores -->
-                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Ramos de Flores</h5>
                         <p class="mb-1">Explora nuestros hermosos ramos de flores para cualquier ocasión.</p>
                     </a>
 
                     <!-- Lirios y Flores Blancas -->
-                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Lirios y Flores Blancas</h5>
                         <p class="mb-1">Descubre nuestros lirios frescos y flores blancas perfectas para eventos.</p>
                     </a>
 
                     <!-- Plantas y Orquídeas -->
-                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Plantas y Orquídeas</h5>
                         <p class="mb-1">Selecciona plantas ornamentales y orquídeas para tu hogar o jardín.</p>
                     </a>
 
                     <!-- Arreglos para el Hogar -->
-                    <a href="CatalogoProductos.html" class="list-group-item list-group-item-action">
+                    <a href="CatalogoProductos.php" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">Arreglos para el Hogar</h5>
                         <p class="mb-1">Explora arreglos decorativos para tu hogar, desde centros de mesa hasta detalles
                             únicos.</p>
@@ -163,7 +163,7 @@
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> | <a href="Terminos.html"
+            <p><a href="Privacidad.php" class="text-white">Política de Privacidad</a> | <a href="Terminos.php"
                     class="text-white">Términos y
                     Condiciones</a></p>
         </div>

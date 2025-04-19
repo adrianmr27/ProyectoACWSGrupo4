@@ -68,7 +68,7 @@ $usuarios = $conexion->query("SELECT id, nombre, email, telefono, tipo_usuario F
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> | <a href="Terminos.html" class="text-white">Términos y
+            <p><a href="Privacidad.php" class="text-white">Política de Privacidad</a> | <a href="Terminos.php" class="text-white">Términos y
             Condiciones</a></p>
         </div>
     </footer>

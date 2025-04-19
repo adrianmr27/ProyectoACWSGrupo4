@@ -13,7 +13,7 @@
 <body id="pagina-ayuda">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="Index.html">
+            <a class="navbar-brand" href="Index.php">
                 <img src="img/favicon.png" alt="Logo de The Flower Lab" width="40" height="40" class="d-inline-block align-text-top me-2">
                 <span class="align-middle">The Flower Lab</span>
             </a>

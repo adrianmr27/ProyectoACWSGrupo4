@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> | <a href="Terminos.php" class="text-white">Términos y
+            <p><a href="Privacidad.php" class="text-white">Política de Privacidad</a> | <a href="Terminos.php" class="text-white">Términos y
                     Condiciones</a></p>
         </div>
     </footer>

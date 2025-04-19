@@ -43,8 +43,8 @@
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> |
-               <a href="Terminos.html" class="text-white">Términos y Condiciones</a></p>
+            <p><a href="Privacidad.php" class="text-white">Política de Privacidad</a> |
+               <a href="Terminos.php" class="text-white">Términos y Condiciones</a></p>
         </div>
     </footer>
 

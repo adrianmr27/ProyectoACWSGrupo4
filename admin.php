@@ -4,7 +4,7 @@ session_start();
 
 // Redirigir si no es admin
 if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 

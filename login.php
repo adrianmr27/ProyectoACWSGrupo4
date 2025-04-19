@@ -16,11 +16,12 @@ if ($row = $result->fetch_assoc()) {
         $_SESSION['id'] = $row['id'];
         $_SESSION['nombre'] = $row['nombre'];
         $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+        $_SESSION['email'] = $email;
 
         if ($row['tipo_usuario'] === 'admin') {
             header("Location: admin.php?login=success");
         } else {
-            header("Location: index.html");
+            header("Location: index.php");
         }
         exit();
     } else {

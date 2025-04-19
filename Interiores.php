@@ -128,7 +128,7 @@
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2025 Floristería Online. Todos los derechos reservados.</p>
-            <p><a href="Privacidad.html" class="text-white">Política de Privacidad</a> | <a href="Terminos.html" class="text-white">Términos y
+            <p><a href="Privacidad.php" class="text-white">Política de Privacidad</a> | <a href="Terminos.php" class="text-white">Términos y
                     Condiciones</a></p>
         </div>
     </footer>
@@ -151,9 +151,34 @@
     
             // Guarda el carrito actualizado en localStorage
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert(`${nombre} agregado al carrito.`);
-        }
+            mostrarToast(`${nombre} agregado al carrito.`);
+    }
+
+    // Función para mostrar el toast
+    function mostrarToast(mensaje, exito = true) {
+        const toastEl = document.getElementById('toastMensaje');
+        const toastTexto = document.getElementById('toastMensajeTexto');
+    
+        toastTexto.innerText = mensaje;
+        toastEl.classList.remove('bg-success', 'bg-danger');
+        toastEl.classList.add(exito ? 'bg-success' : 'bg-danger');
+    
+        new bootstrap.Toast(toastEl).show();
+    }
+
     </script>
+    
+    <!-- Toast para mostrar mensajes bonitos -->
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 9999;">
+  <div id="toastMensaje" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" style="min-width: 300px;">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMensajeTexto" style="font-size: 1.25rem; padding: 15px 20px;">
+        Mensaje por defecto
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
