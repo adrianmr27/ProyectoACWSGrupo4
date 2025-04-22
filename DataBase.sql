@@ -39,3 +39,5 @@ CREATE TABLE producto (
     imagen VARCHAR(255),
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
+
+--CREACION TABLA INVENTARIO

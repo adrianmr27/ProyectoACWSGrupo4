@@ -3,12 +3,35 @@
 include 'conexion.php';
 session_start();
 
-if (!isset($_SESSION['id'])) {
+//Solo acceden admins
+if (!isset($_SESSION['id']) || $_SESSION['tipo_usuario'] !== 'admin') {
     header("Location: cuenta.php");
     exit();
 }
 
-// Eliminar usuario si se solicitó
+//Agregar usuario
+if (isset($_POST['insertar_usuario'])) {
+    $nuevoNombre   = $_POST['nuevo_nombre'];
+    $nuevoEmail    = $_POST['nuevo_email'];
+    $nuevoTelefono = $_POST['nuevo_telefono'];
+    $nuevoPassword = password_hash($_POST['nuevo_password'], PASSWORD_DEFAULT);
+    //Definir si es ciente o admin
+    $nuevoTipo     = isset($_POST['es_admin']) ? 'admin' : 'cliente';
+
+    $stmtInsert = $conexion->prepare(
+        "INSERT INTO usuarios (nombre, email, telefono, password, tipo_usuario) VALUES (?, ?, ?, ?, ?)"
+    );
+    $stmtInsert->bind_param("sssss", $nuevoNombre, $nuevoEmail, $nuevoTelefono, $nuevoPassword, $nuevoTipo);
+
+    if ($stmtInsert->execute()) {
+        header("Location: admin_usuarios.php");
+        exit();
+    } else {
+        echo "<div class='alert alert-danger'>Error al insertar el usuario: " . htmlspecialchars($stmtInsert->error) . "</div>";
+    }
+}
+
+//Eliminar usuarios
 if (isset($_GET['eliminar'])) {
     $idEliminar = intval($_GET['eliminar']);
     $stmt = $conexion->prepare("DELETE FROM usuarios WHERE id = ?");
@@ -18,9 +41,10 @@ if (isset($_GET['eliminar'])) {
     exit();
 }
 
-// Obtener lista de usuarios
+//Obtener usuarios de la DB
 $usuarios = $conexion->query("SELECT id, nombre, email, telefono, tipo_usuario FROM usuarios ORDER BY id ASC");
 ?>
+
 
 <head>
     <title>Administrar Usuarios</title>
@@ -64,6 +88,37 @@ $usuarios = $conexion->query("SELECT id, nombre, email, telefono, tipo_usuario F
             </tbody>
         </table>
     </div>
+    <hr class="my-5">
+<h3>Agregar nuevo usuario</h3>
+
+<form action="admin_usuarios.php" method="POST" class="row g-3">
+    <div class="col-md-4">
+        <label for="nuevo_nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nuevo_nombre" name="nuevo_nombre" required>
+    </div>
+    <div class="col-md-4">
+        <label for="nuevo_email" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="nuevo_email" name="nuevo_email" required>
+    </div>
+    <div class="col-md-4">
+        <label for="nuevo_telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="nuevo_telefono" name="nuevo_telefono" required>
+    </div>
+    <div class="col-md-6">
+        <label for="nuevo_password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="nuevo_password" name="nuevo_password" required>
+    </div>
+    <div class="col-md-6 d-flex align-items-end">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="es_admin" name="es_admin">
+            <label class="form-check-label" for="es_admin">¿Es administrador?</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" name="insertar_usuario" class="btn btn-primary w-100">Agregar Usuario</button>
+    </div>
+</form>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
