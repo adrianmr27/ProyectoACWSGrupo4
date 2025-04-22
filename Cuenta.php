@@ -84,7 +84,6 @@ $telefonoUsuario = $datosUsuario['telefono'] ?? null;
                 </div>
                 <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
             </form>
-            <p class="text-center mt-3"><a href="password.php">¿Olvidaste tu contraseña?</a></p>
             <p class="text-center">¿No tienes cuenta? <a href="Registro.php">Regístrate aquí</a></p>
         <?php endif; ?>
     </div>
