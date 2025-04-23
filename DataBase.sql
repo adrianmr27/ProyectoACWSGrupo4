@@ -40,4 +40,31 @@ CREATE TABLE producto (
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
---CREACION TABLA INVENTARIO
+-- Crear tabla inventario
+CREATE TABLE inventario (
+    id_inventario INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT NOT NULL,
+    cantidad_disponible INT DEFAULT 0,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
+
+-- Crear tabla orden
+CREATE TABLE orden (
+    id_orden INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150) NOT NULL,
+    total DECIMAL(10,2),
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Crear tabla orden detallada
+CREATE TABLE detalle_orden (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_orden INT,
+    id_producto INT,
+    cantidad INT,
+    precio_unitario DECIMAL(10,2),
+    FOREIGN KEY (id_orden) REFERENCES orden(id_orden),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
+
